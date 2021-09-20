@@ -5,7 +5,6 @@ add_executable(exec)
 target_sources(exec
     PRIVATE
         src/main.cpp
-        src/source.cpp
 )
 
 find_package(Boost REQUIRED)

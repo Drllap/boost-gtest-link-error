@@ -1,18 +1,18 @@
 cmake_minimum_required(VERSION 3.13.0 FATAL_ERROR)
+project(boost-gtest-link-error)
 
-add_library(lib STATIC)
-
-target_sources(lib
-    PUBLIC
-        include/lib/header.h
+add_executable(exec)
+target_sources(exec
     PRIVATE
+        src/main.cpp
         src/source.cpp
 )
 
 find_package(Boost REQUIRED)
+find_package(GTest REQUIRED)
 
-target_link_libraries(lib
+target_link_libraries(exec
     PRIVATE
-        Boost:Boost
+        Boost::Boost
+        GTest::GTest
 )
-
